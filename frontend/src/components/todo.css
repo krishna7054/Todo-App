@@ -1,0 +1,93 @@
+.heading {
+    font-style: italic;
+    font-size: xxx-large;
+    margin-left: 40%;
+}
+
+.createtodocard {
+    height: 500px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 5%;
+    border: black solid;
+    border-radius: 29px;
+    background: #df99ff;
+    box-shadow:  21px 21px 31px #cf8eed,
+                 -21px -21px 31px #efa4ff;
+}
+
+.input {
+    font-style: italic;
+    font-size: xx-large;
+    border: 2px solid transparent;
+    width: 80%; /* Adjusted for responsiveness */
+    height: 10vh; /* Adjusted for responsiveness */
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-top: 10%;
+    margin-left: 8%;
+}
+
+.input:hover,
+.input:focus {
+    border: 2px solid #4a9dec;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+button {
+    background-color: white;
+    color: black;
+    border-radius: 10em;
+    font-size: 17px;
+    font-weight: 600;
+    padding: 1em 2em;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid black;
+    box-shadow: 0 0 0 0 black;
+    margin-top: 2%;
+    margin-left: 8%;
+}
+
+button:hover {
+    transform: translateY(-4px) translateX(-2px);
+    box-shadow: 2px 5px 0 0 black;
+}
+
+button:active {
+    transform: translateY(2px) translateX(1px);
+    box-shadow: 0 0 0 0 black;
+}
+
+.label{
+    font-style: italic;
+    font-size: xx-large;
+    padding-top: 5%;
+    padding-left: 5%;
+}
+
+/* Media Queries for Responsive Design */
+@media only screen and (max-width: 768px) {
+    .createtodocard {
+        width: 100%; /* Adjusted for responsiveness */
+        height: 80%;
+        margin-left: 10%; /* Adjusted for responsiveness */
+    }
+    
+    .input {
+        width: 80%; /* Adjusted for responsiveness */
+        height: 2vh; /* Adjusted for responsiveness */
+        margin-left: 10%; /* Adjusted for responsiveness */
+    }
+    
+    button {
+        margin-left: 15%; /* Adjusted for responsiveness */
+    }
+}
+
+

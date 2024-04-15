@@ -1,0 +1,15 @@
+###
+POST http://localhost:3000/todo
+Content-Type: application/json
+
+{
+    "title": "title",
+    "description": "description"
+}
+
+
+###
+DELETE http://localhost:3000/todos/661d3c0c43214fc54cdca00f
+
+###
+PATCH  http://localhost:3000/completed/660dab93dff18484d3fd7c83
