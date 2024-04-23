@@ -29,7 +29,7 @@ To get started with the project, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/todo-app.git
+   git clone https://github.com/krishna7054/Todo-App.git
 
 2. Navigate to the project directory:
  
