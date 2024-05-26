@@ -1,35 +1,42 @@
-.heading {
+.cart{
+    margin-right: auto; 
+    margin-left: auto; 
+    margin-top: 6%;
+    width: 350px; 
+    box-shadow: 0 0 2rem #0002; 
+    height: 500px; 
+    border-radius: 5px; 
+    backdrop-filter: blur(15px); 
+    background: linear-gradient(8deg, #fff0, #fff2, #fff3); 
+    padding: 10px; 
+    text-align: center;
+    
+    display: flex;
+    justify-content: center;
+             
+}
+
+
+.heading{
+    font-size: 40px;
     font-style: italic;
-    font-size: xxx-large;
-    margin-left: 40%;
+    color: #f1f1f1;
+    
 }
-
-.createtodocard {
-    height: 500px;
-    width: 50%;
-    margin-left: 25%;
-    margin-top: 5%;
-    border: black solid;
-    border-radius: 29px;
-    background: #df99ff;
-    box-shadow:  21px 21px 31px #cf8eed,
-                 -21px -21px 31px #efa4ff;
-}
-
 .input {
     font-style: italic;
-    font-size: xx-large;
+    font-size: x-large;
     border: 2px solid transparent;
-    width: 80%; /* Adjusted for responsiveness */
-    height: 10vh; /* Adjusted for responsiveness */
-    padding-left: 0.8em;
+    width: 45vh; /* Adjusted for responsiveness */
+    height: 5vh; /* Adjusted for responsiveness */
+    
     outline: none;
     overflow: hidden;
     background-color: #f1f1f1;
     border-radius: 10px;
     transition: all 0.5s;
-    margin-top: 10%;
-    margin-left: 8%;
+    margin-top: 5%;
+    
 }
 
 .input:hover,
@@ -39,55 +46,56 @@
     background-color: white;
 }
 
-button {
-    background-color: white;
-    color: black;
-    border-radius: 10em;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 1em 2em;
+.button {
+    position: relative;
+    overflow: hidden;
+    height: 3rem;
+    padding: 0 2rem;
+    border-radius: 1.5rem;
+    background: #3d3a4e;
+    background-size: 400%;
+    color: #fff;
+    border: none;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    border: 1px solid black;
-    box-shadow: 0 0 0 0 black;
-    margin-top: 2%;
-    margin-left: 8%;
-}
+    margin-top: 5%;
+    margin-left: 5%;
+  }
+  
+  .button:hover::before {
+    transform: scaleX(1);
+  }
+  
+  .button-content {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    width: 100%;
+    height: inherit;
+    border-radius: inherit;
+    background: linear-gradient(
+      82.3deg,
+      rgba(150, 93, 233, 1) 10.8%,
+      rgba(99, 88, 238, 1) 94.3%
+    );
+    transition: all 0.475s;
+  }
+  
 
-button:hover {
-    transform: translateY(-4px) translateX(-2px);
-    box-shadow: 2px 5px 0 0 black;
-}
-
-button:active {
-    transform: translateY(2px) translateX(1px);
-    box-shadow: 0 0 0 0 black;
-}
-
-.label{
-    font-style: italic;
-    font-size: xx-large;
-    padding-top: 5%;
-    padding-left: 5%;
-}
-
-/* Media Queries for Responsive Design */
-@media only screen and (max-width: 768px) {
-    .createtodocard {
-        width: 100%; /* Adjusted for responsiveness */
-        height: 80%;
-        margin-left: 10%; /* Adjusted for responsiveness */
+@media (min-width: 768px) {
+    .cart{
+        margin-top:5%;
+        
     }
+   .input{
+    width: 45vh;
     
-    .input {
-        width: 80%; /* Adjusted for responsiveness */
-        height: 2vh; /* Adjusted for responsiveness */
-        margin-left: 10%; /* Adjusted for responsiveness */
-    }
-    
-    button {
-        margin-left: 15%; /* Adjusted for responsiveness */
-    }
+   }
 }
-
-

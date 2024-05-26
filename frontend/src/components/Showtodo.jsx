@@ -1,63 +1,81 @@
-// Import necessary dependencies from React and external libraries
-import React, { Component } from "react";
-import { useState } from 'react';        // Import useState hook for managing state
-import './todo.css';                     // Import CSS file for styling
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import './show.css'; // Import CSS file for styling
 
-// Define the Showtodo component
-export function Showtodo({ todos, onDelete, onComp }) {
-  // Define state to store updated todos
-  const [updatedTodos, setUpdatedTodos] = useState(todos);
+export function Showtodo() {
+  const [todos, setTodos] = useState([]);
 
-  // Function to handle deletion of a todo item
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3000/tasks");
+      setTodos(response.data.tasks);
+    } catch (error) {
+      console.error('Error fetching data:', error);
+    }
+  };
+
   const handleDelete = async (id) => {
     try {
-      // Call the onDelete function passed from the parent component (App) to delete the todo item
-      await onDelete(id);
+      await axios.delete(`http://localhost:3000/tasks/${id}`);
+      setTodos(todos.filter(todo => todo._id !== id));
+      alert("Delete Successfully")
     } catch (error) {
       console.error('Error deleting todo:', error);
     }
   };
 
-  // Function to handle marking a todo item as completed
-  const handleComp = async (id) => {
+  const handleUpdate = async (id) => {
     try {
-      // Call the onComp function passed from the parent component (App) to update the completed status of the todo item
-      await onComp(id);
-      // Update the todos state to reflect the updated todo
-      setUpdatedTodos(updatedTodos.map(todo => {
-        if (todo._id === id) {
-          return { ...todo, Completed: true }; // Ensure 'Completed' matches the field name in your MongoDB schema
-        }
-        return todo;
-      }));
+      // Implement your update logic here
+      
+      console.log("Updating todo with ID:", id);
     } catch (error) {
-      console.error('Error updating completed:', error);
+      console.error('Error updating todo:', error);
     }
   };
 
-  // Render the Showtodo component
+  // Function to format date
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toLocaleDateString(); // Format date as "MM/DD/YYYY"
+  };
+
   return (
     <div>
-      <button><a href="/">back</a></button> {/* Button to navigate back */}
-      {/* Map over the todos array and render each todo item */}
-      {todos && todos.map((todo) => {
-        return (
-          <div className={"createtodocard"} key={todo._id}>
-            {/* Display the title of the todo item */}
-            <h2 className={"label"}>Title:{todo.title}</h2>
-            <hr color="black"></hr>
-            {/* Display the description of the todo item */}
-            <h3 className={"label"} >description:{todo.description}</h3>
-            <hr color="black"></hr>
-            {/* Button to mark a todo item as completed */}
-            <button onClick={() => handleComp(todo._id)}>
-              {todo.Completed ? "Completed" : "Mark as Completed"}
-            </button>
-            {/* Button to delete a todo item */}
-            <button onClick={() => handleDelete(todo._id)}>Delete Todo</button>
-          </div>
-        );
-      })}
+<nav className="nav">Show Todos</nav>
+<Link to="/create">
+        
+<button type="button" class="bttn">
+  <span class="button__text">Add TODO</span>
+  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+</button>
+      </Link>
+    <div className="crt">
+      
+      
+      
+      <div>
+      
+      {todos.map((todo) => (
+        <div key={todo._id} className="createtodocard">
+          <h2 className="label">Title: {todo.title}</h2>
+          <h3 className="label">Description: {todo.description}</h3>
+          <p className="label">Status: {todo.status}</p>
+          <p className="label">Due Date: {formatDate(todo.dueDate)}</p>
+          <button className="button" onClick={() => handleDelete(todo._id)}><span className="button-content">Delete</span></button>
+          <Link to={`/update/${todo._id}`}>
+          <button className="button" onClick={() => handleUpdate(todo._id)}><span className="button-content">Update</span></button>
+      </Link>
+          
+        </div>
+      ))}
+      </div>
+    </div>
     </div>
   );
 }

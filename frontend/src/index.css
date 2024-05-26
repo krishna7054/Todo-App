@@ -1,4 +1,32 @@
-body{
-    background-color: #df99ff;
-    height: 100%;
+/* Default styles for all screen sizes */
+body {
+    /* Specify the URL of the background image using the url() function */
+    background-image: url('./src/assets/blob-scene-haikei.svg');
+    /* Set additional background properties */
+    background-repeat: no-repeat;
+    background-size: cover; /* Adjust as needed */
+    
+   
+   
+}
+
+
+/* Responsive adjustments for tablets */
+@media (max-width: 768px) {
+    body {
+        background-image: url('./src/assets/blob-scene-haikei_pad.svg');
+        /* Set additional background properties */
+        background-repeat: no-repeat;
+        background-size: cover; /* Adjust as needed */
+    }
+}
+
+/* Responsive adjustments for mobile devices */
+@media (max-width: 576px) {
+    body {
+        background-image: url('./src/assets/blob-scene-haikei_mobile.svg');
+        /* Set additional background properties */
+        background-repeat: no-repeat;
+        background-size: cover; /* Adjust as needed */
+    }
 }

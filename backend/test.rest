@@ -1,15 +1,17 @@
 ###
-POST http://localhost:3000/todo
+POST http://localhost:3000/tasks
 Content-Type: application/json
 
 {
-    "title": "title",
-    "description": "description"
+    "title": "t",
+    "description": "des",
+     "status":"pending",
+     "dueDate":"02-02-2022"
 }
 
 
 ###
-DELETE http://localhost:3000/todos/661d3c0c43214fc54cdca00f
+DELETE http://localhost:3000/todos/661d7fef0bcbf9997d8fe1d7
 
 ###
-PATCH  http://localhost:3000/completed/660dab93dff18484d3fd7c83
+PATCH  http://localhost:3000/completed/661d7fef0bcbf9997d8fe1d7
