@@ -7,7 +7,7 @@ import './todo.css'
 const Input = ({ type, placeholder, value, onChange }) => (
   <>
     <input
-      className="input"
+      className="input1"
       type={type}
       placeholder={placeholder}
       value={value}
@@ -30,7 +30,7 @@ export function Createtodo() {
     e.preventDefault();
     try {
       // Send a POST request to create a new task
-      await axios.post('http://localhost:3000/tasks', {
+      await axios.post('https://backend-todo-nqal.onrender.com/tasks', {
         title,
         description,
         status,
@@ -73,7 +73,7 @@ export function Createtodo() {
               onChange={(e) => setDescription(e.target.value)}
             />
             <select
-              className="input"
+              className="input1"
               value={status}
               onChange={(e) => setStatus(e.target.value)}
             >

@@ -1,115 +1,245 @@
-.crt{
-    width: 90vh;
-    height: 35rem;
-    margin-top: 6%;
-    text-align: center;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    scrollbar-color: #FBAE3C #001220;
-    margin-right: auto; 
-    margin-left: auto; 
-    box-shadow: 0 0 2rem #0002; 
-    border-radius: 5px; 
-    backdrop-filter: blur(15px); 
-    background: linear-gradient(8deg, #fff0, #fff2, #fff3); 
-    padding: 10px; 
-    text-align: center;
-    
-    display: flex;
-    justify-content: center;
-    
+.crt {
+  width: 90vh;
+  height: 29rem;
+  margin-top: 10%;
+  margin-bottom: 6%;
+  text-align: center;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-color: #0f2246 #092454;
+  margin-right: auto;
+  margin-left: auto;
+  box-shadow: 0 0 2rem #0002;
+  border-radius: 5px;
+  backdrop-filter: blur(15px);
+  background: linear-gradient(8deg, #fff0, #fff2, #fff3);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
-.nav{
-    overflow: hidden;
-    font-size: 50px;
-    font-style: italic;
-    color: #f1f1f1;
+
+/* Adjusting styles for larger screens */
+@media (min-width: 1200px) {
+  .crt {
+      width: 50%;
+      height: 30rem;
+      
+  }
+
+  .createtodocard {
+      width: fit-content;
+      height: fit-content;
+  }
+
+  .nav {
+    
+      display: flex;
+      justify-content: flex-start;
+  }
+
+  .label {
+      font-size: 35px;
+  }
+
+  button.bttn {
+      width: 19vh;
+      height: 6vh;
+      
+  }
+}
+
+/* Adjusting styles for tablets */
+@media (max-width: 1200px) {
+  .crt {
+    width: 100vh;
+    height: 100vh;
+    
+  }
+
+  .createtodocard {
+      width: fit-content;
+      height: fit-content;
+  }
+
+  .nav {
+      
+     display: flex;
+     justify-content: flex-start;
+  }
+
+  .label {
+      font-size: 30px;
+  }
+
+  button.bttn {
+     
+      width: 35vh;
+      height: 8vh;
+      /* margin-top: 1%; */
+      
+  }
+}
+
+/* Adjusting styles for mobile */
+@media (max-width: 768px) {
+  .crt {
+      width: 80vh;
+      height: 80vh;
+      margin-top: 10%;
+  }
+
+  .createtodocard {
+      width: fit-content;
+      height: fit-content;
+  }
+
+  .nav {
+      
+      display: flex;
+      justify-content: flex-start;
+      
+  }
+
+  .label {
+      font-size: 25px;
+  }
+
+  button.bttn {
+      width: 19vh;
+      height: 40px;
+      display: flex;
+     margin-left: 190%;
+      
+  }
+}
+
+@media (max-width: 375px) {
+  .crt {
+    width: 80vh;
+    height: 80vh;
+    margin-top: 20%;
+    margin-bottom: 40%;
+  }
+
+  .createtodocard {
+    width: fit-content;
+    height: fit-content;
+  }
+
+  .nav {
+      display: flex;
+      justify-content: flex-start;
+      
+      
+  }
+
+  .label {
+      font-size: 25px;
+  }
+
+  button.bttn {
+    width: 35vh;
+    height: 35px;
     display: flex;
-    margin-left: 40%;
-    margin-top: 5px;
-  position: fixed; /* Set the navbar to fixed position */
-  top: 0; /* Position the navbar at the top of the page */
+   margin-left: 50%;
+      
+  }
+}
+
+.nav {
+  
+  font-size: 5vh;
+  font-style: italic;
+  color: #f1f1f1;
+  /* margin-left: 10%; */
+  margin-top: 5px;
+  
   
 }
 
-
-.label{
-    font-size: 40px;
-    font-style: italic;
-    color: #f1f1f1;
-    
+.label {
+  font-size: 40px;
+  font-style: italic;
+  color: #f1f1f1;
 }
 
-.createtodocard{
-    border: solid #001220;
-    margin-top: 5px;
-    width: 80vh;
+.createtodocard {
+  border: solid #001220;
+  margin-top: 5px;
+  width: 80vh;
+  height: fit-content;
+  
+}
+.b{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.btn{
-    display: flex;
-    justify-content: center;
-}
+
+
 
 .bttn {
-    --main-focus: #2d8cf0;
-    --font-color: #dedede;
-    --bg-color-sub: #222;
-    --bg-color: #323232;
-    --main-color: #dedede;
-    position: relative;
-    width: 150px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    border: 2px solid var(--main-color);
-    box-shadow: 4px 4px var(--main-color);
-    background-color: var(--bg-color);
-    border-radius: 10px;
-    overflow: hidden;
-  }
+  --main-focus: #2d8cf0;
+  --font-color: #dedede;
+  --bg-color-sub: #222;
+  --bg-color: #323232;
+  --main-color: #dedede;
+  position: relative;
+  width: 19vh;
+  height: 7vh;
+  cursor: pointer;
+  display: flex;
   
-  .bttn, .button__icon, .button__text {
-    transition: all 0.3s;
-  }
-  
-  .bttn .button__text {
-    transform: translateX(25px);
-    color: var(--font-color);
-    font-weight: 600;
-  }
-  
-  .bttn .button__icon {
-    position: absolute;
-    transform: translateX(109px);
-    height: 100%;
-    width: 39px;
-    background-color: var(--bg-color-sub);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .bttn .svg {
-    width: 20px;
-    stroke: var(--main-color);
-  }
-  
-  .bttn:hover {
-    background: var(--bg-color);
-  }
-  
-  .bttn:hover .button__text {
-    color: transparent;
-  }
-  
-  .bttn:hover .button__icon {
-    width: 148px;
-    transform: translateX(0);
-  }
-  
-  .bttn:active {
-    transform: translate(3px, 3px);
-    box-shadow: 0px 0px var(--main-color);
-  }
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.bttn, .button__icon, .button__text {
+  transition: all 0.3s;
+}
+
+.bttn .button__text {
+  transform: translateX(25px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.bttn .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bttn .svg {
+  width: 20px;
+  stroke: var(--main-color);
+}
+
+.bttn:hover {
+  background: var(--bg-color);
+}
+
+.bttn:hover .button__text {
+  color: transparent;
+}
+
+.bttn:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.bttn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}

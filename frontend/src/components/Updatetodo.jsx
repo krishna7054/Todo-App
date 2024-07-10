@@ -8,7 +8,7 @@ import './todo.css';
 const Input = ({ type, placeholder, value, onChange }) => (
   <>
     <input
-      className="input"
+      className="input1"
       type={type}
       placeholder={placeholder}
       value={value}
@@ -33,7 +33,7 @@ export function Updatetodo() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:3000/tasks/${id}`);
+        const response = await axios.get(`https://backend-todo-nqal.onrender.com/tasks/${id}`);
         const todo = response.data.task;
         // Update state with the fetched todo data
         setTitle(todo.title);
@@ -56,7 +56,7 @@ export function Updatetodo() {
     e.preventDefault();
     try {
       // Send a PUT request to update the todo with the new data
-      await axios.put(`http://localhost:3000/tasks/${id}`, {
+      await axios.put(`https://backend-todo-nqal.onrender.com/tasks/${id}`, {
         title,
         description,
         status,
@@ -91,7 +91,7 @@ export function Updatetodo() {
         <Input placeholder="Title" type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
         <Input placeholder="Description" type="text" value={description} onChange={(e) => setDescription(e.target.value)} />
         
-          <select className="input" value={status} onChange={(e) => setStatus(e.target.value)}>
+          <select className="input1" value={status} onChange={(e) => setStatus(e.target.value)}>
             <option value="pending">Pending</option>
             <option value="in-progress">In Progress</option>
             <option value="completed">Completed</option>

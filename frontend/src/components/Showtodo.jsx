@@ -12,7 +12,7 @@ export function Showtodo() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/tasks");
+      const response = await axios.get("https://backend-todo-nqal.onrender.com/tasks");
       setTodos(response.data.tasks);
     } catch (error) {
       console.error('Error fetching data:', error);
@@ -21,7 +21,7 @@ export function Showtodo() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/tasks/${id}`);
+      await axios.delete(`https://backend-todo-nqal.onrender.com/tasks/${id}`);
       setTodos(todos.filter(todo => todo._id !== id));
       alert("Delete Successfully")
     } catch (error) {
@@ -47,18 +47,21 @@ export function Showtodo() {
 
   return (
     <div>
-<nav className="nav">Show Todos</nav>
+
+<div className="b">
+  <div>
+<nav className="nav">Todos</nav></div>
+<div>
 <Link to="/create">
         
-<button type="button" class="bttn">
-  <span class="button__text">Add TODO</span>
-  <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+<button type="button" className="bttn">
+  <span className="button__text">Add TODO</span>
+  <span className="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" strokeWidth="2" strokeLinejoin="round" strokeLinecap="round" stroke="currentColor" height="24" fill="none" className="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
 </button>
       </Link>
+      </div>
+      </div>
     <div className="crt">
-      
-      
-      
       <div>
       
       {todos.map((todo) => (

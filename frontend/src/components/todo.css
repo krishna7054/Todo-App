@@ -1,101 +1,142 @@
-.cart{
-    margin-right: auto; 
-    margin-left: auto; 
-    margin-top: 6%;
-    width: 350px; 
-    box-shadow: 0 0 2rem #0002; 
-    height: 500px; 
-    border-radius: 5px; 
-    backdrop-filter: blur(15px); 
-    background: linear-gradient(8deg, #fff0, #fff2, #fff3); 
-    padding: 10px; 
-    text-align: center;
-    
-    display: flex;
-    justify-content: center;
-             
+.cart {
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 6%;
+  width: 350px;
+  box-shadow: 0 0 2rem #0002;
+  height: 500px;
+  border-radius: 5px;
+  backdrop-filter: blur(15px);
+  background: linear-gradient(8deg, #fff1, #fff3, #fff4);
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
+/* Adjusting styles for larger screens */
+@media (min-width: 1200px) {
+  .cart {
+      width: fit-content;
+      height: fit-content;
+  }
 
-.heading{
-    font-size: 40px;
-    font-style: italic;
-    color: #f1f1f1;
-    
+ 
+
+  .heading {
+      font-size: 50px;
+  }
 }
-.input {
-    font-style: italic;
-    font-size: x-large;
-    border: 2px solid transparent;
-    width: 45vh; /* Adjusted for responsiveness */
-    height: 5vh; /* Adjusted for responsiveness */
-    
-    outline: none;
-    overflow: hidden;
-    background-color: #f1f1f1;
-    border-radius: 10px;
-    transition: all 0.5s;
-    margin-top: 5%;
-    
+
+/* Adjusting styles for tablets */
+@media (max-width: 1200px) {
+  .cart {
+      width: fit-content;
+      height: fit-content;
+  }
+
+  
+
+  .heading {
+      font-size: 35px;
+  }
+}
+
+/* Adjusting styles for mobile */
+@media (max-width: 768px) {
+  .cart {
+      width: fit-content;
+      height: fit-content;
+      margin-top: 10%;
+  }
+
+  
+
+  .heading {
+      font-size: 25px;
+      
+  }
+  
+  .button {
+      width: 80%;
+      margin: 5% auto;
+      height: 2.5rem;
+      padding: 0 1.5rem;
+      border-radius: 1rem;
+  }
+}
+
+.heading {
+  font-size: 40px;
+  font-style: italic;
+  color: #f1f1f1;
+  
+  
+}
+
+.input1 {
+  font-style: italic;
+  font-size: x-large;
+  border: 2px solid transparent;
+  width: 60vh; /* Adjusted for responsiveness */
+  height: 8vh; /* Adjusted for responsiveness */
+  outline: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  transition: all 0.5s;
+  margin-top: 5%;
 }
 
 .input:hover,
 .input:focus {
-    border: 2px solid #4a9dec;
-    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
-    background-color: white;
+  border: 2px solid #4a9dec;
+  box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 20%);
+  background-color: white;
 }
 
 .button {
-    position: relative;
-    overflow: hidden;
-    height: 3rem;
-    padding: 0 2rem;
-    border-radius: 1.5rem;
-    background: #3d3a4e;
-    background-size: 400%;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    margin-top: 5%;
-    margin-left: 5%;
-  }
-  
-  .button:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .button-content {
-    position: relative;
-    z-index: 1;
-  }
-  
-  .button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    transform: scaleX(0);
-    transform-origin: 0 50%;
-    width: 100%;
-    height: inherit;
-    border-radius: inherit;
-    background: linear-gradient(
-      82.3deg,
-      rgba(150, 93, 233, 1) 10.8%,
-      rgba(99, 88, 238, 1) 94.3%
-    );
-    transition: all 0.475s;
-  }
-  
+  position: relative;
+  overflow: hidden;
+  height: 3rem;
+  padding: 0 2rem;
+  border-radius: 1.5rem;
+  background: #3d3a4e;
+  background-size: 400%;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-top: 5%;
+  margin-left: 5%;
+}
 
-@media (min-width: 768px) {
-    .cart{
-        margin-top:5%;
-        
-    }
-   .input{
-    width: 45vh;
-    
-   }
+.button:hover::before {
+  transform: scaleX(1);
+}
+
+.button-content {
+  position: relative;
+  z-index: 1;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: 0 50%;
+  width: 100%;
+  height: inherit;
+  border-radius: inherit;
+  background: linear-gradient(
+    82.3deg,
+    rgba(150, 93, 233, 1) 10.8%,
+    rgba(99, 88, 238, 1) 94.3%
+  );
+  transition: all 0.475s;
+}
+
+body {
+  background-color: #092454;
 }
