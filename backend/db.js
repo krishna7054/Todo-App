@@ -2,7 +2,7 @@
 const mongoose = require('mongoose');
 
 // Connect to MongoDB database
-mongoose.connect('mongodb+srv://21it3038:WDHbRTNejWX1uisv@cluster0.b8vudo6.mongodb.net/task');
+mongoose.connect('YOUR MONGODB URL');
 
 // Define schema for the 'tasks' collection
 const taskSchema = mongoose.Schema({
